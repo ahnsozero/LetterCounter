@@ -3,7 +3,7 @@ plugins {
     id 'maven-publish'
 }
 
-group = 'com.github.ahnsozero'
+group = 'com.github.ahnsozero' //
 version = '1.0.2'
 
 repositories {
