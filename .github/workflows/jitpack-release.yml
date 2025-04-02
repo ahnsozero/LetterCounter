@@ -41,4 +41,4 @@ jobs:
           tag_name: v${{ steps.extract_version_name.outputs.version }}
           name: Release v${{ steps.extract_version_name.outputs.version }}
         env:
-          GITHUB_TOKEN: ${{ secrets.TOKEN }}
+          GITHUB_TOKEN: ${{ secrets.LC_TOKEN }}
