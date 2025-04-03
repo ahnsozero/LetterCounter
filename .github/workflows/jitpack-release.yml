@@ -12,6 +12,8 @@ jobs:
     steps:
       - name: Checkout Repository
         uses: actions/checkout@v3
+        with:
+          persist-credentials: false
 
       - name: Extract Version from Commit Message
         id: extract_version_name
@@ -33,7 +35,7 @@ jobs:
       - name: Create Git Tag
         run: |
           git tag "v$VERSION" -m "Release v$VERSION"
-          git push origin "v$VERSION"
+          git push https://x-access-token:${{ secrets.LC_TOKEN }}@github.com/ahnsozero/LetterCounter.git "v$VERSION"
 
       - name: Create GitHub Release
         uses: softprops/action-gh-release@v1
